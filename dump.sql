@@ -35,3 +35,13 @@ ADD CONSTRAINT `fk_comments_1`
   REFERENCES `check24`.`articles` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+ALTER TABLE `check24`.`articles` 
+ADD INDEX `fk_articles_1_idx` (`author` ASC);
+ALTER TABLE `check24`.`articles` 
+ADD CONSTRAINT `fk_articles_1`
+  FOREIGN KEY (`author`)
+  REFERENCES `check24`.`users` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+ALTER TABLE `check24`.`articles` 
+CHANGE COLUMN `picture` `picture` BLOB NULL DEFAULT NULL ;

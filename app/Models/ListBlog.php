@@ -12,7 +12,20 @@ class ListBlog extends Conn
     public function list()
     {
         $this->conn = $this->connect();
-        $query = "SELECT * FROM articles ORDER BY id DESC LIMIT 10";
+        $query = "SELECT 
+        IF(comments.id, COUNT(comments.id), 0) AS number,
+            articles.*,
+            users.name AS author_name
+        FROM
+            articles
+                LEFT JOIN
+            comments ON comments.id_articles = articles.id
+                INNER JOIN
+            users ON users.id = articles.author
+        GROUP BY articles.id
+        ORDER BY articles.date DESC
+        LIMIT 10
+        ";
 
         $resultArticles =  $this->conn->prepare($query);
         $resultArticles->execute();

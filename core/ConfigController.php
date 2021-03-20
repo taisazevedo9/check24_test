@@ -29,11 +29,10 @@ class ConfigController
             $this->urlMethod = "index";
         }
             
-            echo "Controller {$this->urlController} - {$this->urlMethod} ";
+
         }else{
             $this->urlController = "home";
             $this->urlMethod = "index";
-            echo "acessar pagina interna {$this->urlController} - {$this->urlMethod} ";
         }
         
     }
@@ -41,7 +40,6 @@ class ConfigController
     {
         $urlController = \ucwords($this->urlController);
         $classLoad = "\\App\\Controllers\\".$urlController;
-        echo $classLoad;
         $classCharge = new $classLoad;
         $classCharge->index();
     }
