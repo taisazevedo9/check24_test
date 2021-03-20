@@ -1,0 +1,18 @@
+{
+    "name": "ckeck24-mvc/api-mvc-ckeck24",
+    "description": "Blog",
+    "authors": [
+        {
+            "name": "Taís da Silva de Azevedo",
+            "email": "azevedo.tais@yahoo.com.br"
+            
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\":"app",
+            "Core\\":"core"
+        }
+    },
+    "require": {}
+}
