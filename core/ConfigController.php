@@ -1,5 +1,6 @@
 <?php
 namespace Core;
+
 /**
  * Description of ConfigController
  * 
@@ -12,7 +13,8 @@ class ConfigController
     private array $urlSet;
     private string $urlMethod;
     private string $urlController;
-
+    
+    
     public function __construct()
     {
         if(!empty(filter_input(INPUT_GET,"url",FILTER_DEFAULT))){

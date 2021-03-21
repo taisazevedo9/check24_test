@@ -1,5 +1,9 @@
 <?php
 namespace App\Controllers;
+use League\OAuth2\Client\Provider\Google; 
+use Core\ConfigController as Home;
+use Exception;
+
 /**
  * Description of Login
  * 
@@ -11,10 +15,11 @@ class Login
 
     public function index()
     {
-        $listArticle = new \App\Models\ListBlog();
-        $this->data['articles'] = $listArticle->list();
+            $this->data['authUrl'] = $_SESSION['authUrlLogin'];
+            unset($_SESSION['authUrlLogin']);
 
-        $loadView = new \Core\ConfigView('Views/login/login',$this->data);
-        $loadView->renderView();
-    }    
+            $loadView = new \Core\ConfigView('Views/login/login',$this->data);
+            $loadView->renderView();
+   
+    }
 }

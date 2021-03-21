@@ -45,8 +45,7 @@
 
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="http://localhost/check24_test/login/login" id="alertsDropdown" role="button">
                             Login
                             <!-- Counter - Alerts -->
                             
