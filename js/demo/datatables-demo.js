@@ -1,4 +1,6 @@
-// Call the dataTables jQuery plugin
-$(document).ready(function() {
+(function($) {
+  "use strict"; // Start of use strict
+    
+
   $('#dataTable').DataTable();
-});
+})(jQuery); // End of use strict

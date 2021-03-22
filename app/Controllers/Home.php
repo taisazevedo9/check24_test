@@ -9,6 +9,7 @@ class Home
 {
     public function index()
     {
+        
         $listArticle = new \App\Models\ListBlog();
         $this->data['articles'] = $listArticle->list();
 

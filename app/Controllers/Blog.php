@@ -16,5 +16,11 @@ class Blog
 
         $loadView = new \Core\ConfigView('Views/blog/listArticles',$this->data);
         $loadView->renderView();
+    }
+    public function create()
+    {
+        var_dump('asç,asdçds');die;
     }    
+
+
 }

@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title></title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -66,7 +66,7 @@
                                         <a href="" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
-                                        <a href="<?php echo $this->data['authUrl'];?>" class="btn btn-google btn-user btn-block">
+                                        <a href="<?php echo $_SESSION['authUrl'];?>" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
                                         </a>
                                         

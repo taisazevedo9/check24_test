@@ -1,5 +1,8 @@
 <?php
 namespace App\Models;
+
+use Exception;
+
 /**
  * Description of ListBlog
  * 
@@ -24,7 +27,7 @@ class ListBlog extends Conn
             users ON users.id = articles.author
         GROUP BY articles.id
         ORDER BY articles.date DESC
-        LIMIT 10
+        LIMIT 3
         ";
 
         $resultArticles =  $this->conn->prepare($query);
@@ -32,5 +35,31 @@ class ListBlog extends Conn
         $return = $resultArticles->fetchAll();
         return $return;
         
-    }    
+    }   
+    public function delet($id)
+    {
+
+        try {
+            try {
+                $this->conn = $this->connect();
+                $query = "DELETE FROM articles WHERE id ='{$id}'";
+                $resultArticles =  $this->conn->prepare($query);
+                
+                $resultArticles->execute();
+                
+                if(!$resultArticles->execute()){
+                    throw new Exception('false'); 
+                }
+                throw new Exception('true');
+                
+            } catch (Exception $e) {
+                // rethrow it
+                throw $e;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
+
+    } 
 }

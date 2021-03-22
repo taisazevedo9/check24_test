@@ -45,7 +45,7 @@
 
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="http://localhost/check24_test/login/login" id="alertsDropdown" role="button">
+                        <a class="nav-link dropdown-toggle" href="<?php echo $_SESSION['authUrl'];?>" id="alertsDropdown" role="button">
                             Login
                             <!-- Counter - Alerts -->
                             
@@ -106,8 +106,8 @@
                 <div class="mb-1 text-muted"><?php echo $dates ;?></div>
                 <strong class="mb-2 text-primary"> 
                 <h3 class="mb-0"><a class="text-dark" href="#"><?php echo $article['title'];?></a></h3></strong>
-                <p class="card-text mb-auto"><?php echo $article['content'];?>
-                <a href="#">Continue</a> 
+                <p class="card-text mb-auto"><?php echo  mb_strimwidth($article['content'], 0, 1000, " <a href='#'>...</a>");?>
+                 
                 </p>
                 <div class="row">
                     <div class="col-12">        
